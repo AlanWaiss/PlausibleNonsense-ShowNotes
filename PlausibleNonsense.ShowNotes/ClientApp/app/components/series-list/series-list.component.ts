@@ -1,12 +1,23 @@
-﻿import { Component } from '@angular/core';
-import { Http } from '@angular/http';
-import { Series } from "../../types/series";
+﻿import { Component, OnInit } from "@angular/core";
+import { Series } from "../../series";
+import { SeriesService } from "../../series.service";
 
 @Component({
 	selector: "series-list",
-	template: require("./series-list.html")
+	template: require("./series-list.html"),
+	providers: [
+		SeriesService
+	]
 })
-export class SeriesListComponent {
+export class SeriesListComponent implements OnInit {
 	public list: Series[];
 
+	constructor(private seriesService: SeriesService) { }
+
+	getSeries(): void {
+		this.seriesService.getSeries().then(list => this.list = list);
+	}
+	ngOnInit(): void {
+		this.getSeries();
+	}
 }

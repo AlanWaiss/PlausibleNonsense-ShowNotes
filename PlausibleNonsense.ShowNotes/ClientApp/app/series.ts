@@ -3,5 +3,4 @@
 export interface Series {
 	title: string;
 	showCount: number;
-	shows: Show[];
 }
