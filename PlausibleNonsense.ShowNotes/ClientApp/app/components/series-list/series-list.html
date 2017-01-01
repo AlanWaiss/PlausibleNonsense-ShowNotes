@@ -1,0 +1,10 @@
+﻿<h1>Shows</h1>
+
+<p *ngIf="!list"><em>Loading...</em></p>
+
+<ul class="list-group" *ngIf="list">
+	<li *ngFor="let series of list" class="list-group-item">
+		<span class="badge">{{ series.showCount }}</span>
+		{{ series.title }}
+	</li>
+</ul>
