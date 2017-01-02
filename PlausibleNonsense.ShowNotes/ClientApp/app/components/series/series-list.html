@@ -1,0 +1,17 @@
+﻿<div class="row">
+	<div class="col-sm-5 col-md-4 col-lg-3">
+		<h1>Shows</h1>
+
+		<p *ngIf="!list"><em>Loading...</em></p>
+
+		<div class="list-group" *ngIf="list">
+			<a *ngFor="let series of list" class="list-group-item" [routerLinkActive]="['active']" [routerLink]="[series.id]">
+				<span class="badge">{{ series.showCount }}</span>
+				{{ series.title }}
+			</a>
+		</div>
+	</div>
+	<div class="col-sm-7 col-md-8 col-lg-9">
+		<router-outlet></router-outlet>
+	</div>
+</div>

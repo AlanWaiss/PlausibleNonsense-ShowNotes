@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/dist/app.css",
     "inputFile": "ClientApp/style/app.less"
+  },
+  {
+    "outputFile": "ClientApp/app/components/series/series-detail.css",
+    "inputFile": "ClientApp/app/components/series/series-detail.less"
   }
 ]

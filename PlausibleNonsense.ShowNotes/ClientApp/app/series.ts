@@ -1,6 +1,14 @@
 ﻿import { Show } from "./show";
 
-export interface Series {
+interface SeriesBase {
+	id: string;
 	title: string;
+}
+
+export interface Series extends SeriesBase {
+	shows: Show[];
+}
+
+export interface SeriesSummary extends SeriesBase {
 	showCount: number;
 }

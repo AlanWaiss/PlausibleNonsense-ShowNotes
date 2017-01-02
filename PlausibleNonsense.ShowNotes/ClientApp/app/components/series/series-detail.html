@@ -1,0 +1,24 @@
+﻿<div *ngIf="series">
+	<h2 class="h1">{{ series.title }}</h2>
+
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="control-label col-sm-2 col-md-1">Title</label>
+			<div class="col-sm-10 col-md-11"><input [ngModel]="series.title" (ngModelChange)="onTitleChange($event)" placeholder="Title" class="form-control" /></div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2 col-md-1">ID</label>
+			<div class="col-sm-10 col-md-11 form-control-static">{{ series.id }}</div>
+		</div>
+	</div>
+
+	<h3>Shows</h3>
+
+	<div *ngIf="series.shows" class="list-group">
+		<a *ngFor="let show of series.shows" class="list-group-item">
+			<span class="show-num label label-primary">{{ show.num }}</span>
+			<span class="show-title">{{ show.title }}</span>
+			<span class="show-publish">{{ show.publish | date }}</span>
+		</a>
+	</div>
+</div>
