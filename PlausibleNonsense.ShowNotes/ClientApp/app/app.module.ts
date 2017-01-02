@@ -12,6 +12,8 @@ import { SeriesDetailComponent } from "./components/series/series-detail.compone
 import { SeriesListComponent } from "./components/series/series-list.component";
 import { SeriesHomeComponent } from "./components/series/series-home.component";
 import { SeriesService } from "./series.service";
+import { ShowComponent } from "./components/show/show.component";
+import { SegmentComponent } from "./components/show/segment.component";
 
 @NgModule({
     imports: [
@@ -34,6 +36,8 @@ import { SeriesService } from "./series.service";
 		SeriesListComponent,
 		SeriesDetailComponent,
 		SeriesHomeComponent,
+		ShowComponent,
+		SegmentComponent,
 		HomeComponent
 	],
 	providers: [

@@ -15,7 +15,7 @@
 	<h3>Shows</h3>
 
 	<div *ngIf="series.shows" class="list-group">
-		<a *ngFor="let show of series.shows" class="list-group-item">
+		<a *ngFor="let show of series.shows" class="list-group-item" [routerLinkActive]="['active']" [routerLink]="[show.num]">
 			<span class="show-num label label-primary">{{ show.num }}</span>
 			<span class="show-title">{{ show.title }}</span>
 			<span class="show-publish">{{ show.publish | date }}</span>

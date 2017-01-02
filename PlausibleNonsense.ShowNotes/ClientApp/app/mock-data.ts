@@ -60,7 +60,12 @@ export let SERIES: SeriesSummary[] = [];
 
 export let SERIES_BY_ID = {};
 
+export let SHOW_BY_SERIES = {};
+
 for (let i = 0, len = all.length; i < len; i++) {
+	var seriesShow = SHOW_BY_SERIES[all[i].id] = {},
+		shows = all[i].shows;
+
 	SERIES[i] = {
 		id: all[i].id,
 		title: all[i].title,
@@ -68,4 +73,43 @@ for (let i = 0, len = all.length; i < len; i++) {
 	};
 
 	SERIES_BY_ID[all[i].id] = all[i];
+
+	for (let s = 0, sLen = shows.length; s < sLen; s++) {
+		seriesShow["n" + shows[s].num] = {
+			show: shows[s],
+			segments: []
+		};
+	}
 }
+
+SHOW_BY_SERIES["plausible-nonsense"]["n1"].segments = [
+	{
+		id: "a",
+		title: "Downloading the Extension",
+		segments: [
+			{
+				id: "a1",
+				content: "Brought to you by Last Week Tonight"
+			},
+			{
+				id: "a2",
+				content: "You need to download the Angular 2 template to start a ASPNET Core project using Angular 2. You can find it online."
+			},
+			{
+				id: "a3",
+				link: "http://blog.stevensanderson.com/2016/10/04/angular2-template-for-visual-studio/",
+				content: "blog.stevensanderson.com"
+			}
+		]
+	},
+	{
+		id: "b",
+		title: "Creating the project",
+		segments: [
+			{
+				id: "b1",
+				content: "Create the project, following the guide for the template."
+			}
+		]
+	}
+];

@@ -6,5 +6,9 @@
   {
     "outputFile": "ClientApp/app/components/series/series-detail.css",
     "inputFile": "ClientApp/app/components/series/series-detail.less"
+  },
+  {
+    "outputFile": "ClientApp/app/components/show/segment.css",
+    "inputFile": "ClientApp/app/components/show/segment.less"
   }
 ]

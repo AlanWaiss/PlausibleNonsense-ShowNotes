@@ -1,8 +1,8 @@
 ﻿import { Injectable } from '@angular/core';
 import { SeriesSummary } from './series';
 import { Series } from './series';
-import { SERIES } from './mock-series';
-import { SERIES_BY_ID } from "./mock-series";
+import { SERIES } from './mock-data';
+import { SERIES_BY_ID } from "./mock-data";
 
 @Injectable()
 export class SeriesService {

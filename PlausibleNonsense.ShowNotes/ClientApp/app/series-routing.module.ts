@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { SeriesListComponent } from "./components/series/series-list.component";
 import { SeriesDetailComponent } from "./components/series/series-detail.component";
 import { SeriesHomeComponent } from "./components/series/series-home.component";
+import { ShowComponent } from "./components/show/show.component";
 
 const seriesRoutes: Routes = [
+	{
+		path: "series/:id/:num",
+		component: ShowComponent
+	},
 	{
 		path: "series",
 		component: SeriesListComponent,
